@@ -20,7 +20,7 @@ double - reservation() - takes data from the user. Makes transfers the resrved r
 						 from the availbale rooms. Returns double with th eprice of the stay. 
 						 * Could be optimized in the future.
 
-boolean bookRoom() - Receives the roomID as String. Delites the room with the ID from the file with aveilable rooms
+boolean reservesRoom() - Receives the roomID as String. Delites the room with the ID from the file with aveilable rooms
 					 and adds it to the file with ReservedRooms.csv
 
 2. UserManagement class contains all functions regarding the information management of the users. Future functuanalities will be added.
