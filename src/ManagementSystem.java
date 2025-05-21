@@ -2,7 +2,6 @@ import ServiceFiles.RoomManagement;
 import ServiceFiles.UserManagement;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -69,10 +68,10 @@ public class ManagementSystem {
 			registration = sc.nextLine().toLowerCase();
 		}
 
-		int userId = user.registeredUser(registration);
-		if(userId != -1){
+		int userID = user.registeredUser(registration);
+		if(userID != -1){
 			RoomManagement roomBooking = new RoomManagement();
-			roomBooking.bookRoom();
+			roomBooking.bookRoom(userID);
 		}
 
 	}
