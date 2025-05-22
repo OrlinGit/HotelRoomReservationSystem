@@ -1,5 +1,7 @@
-# SirmaOOP
+**#HotelRoomReservationSystem**
 This repo is created to upload all small projects I have created in the OOP course.
+The code was written using only the principals of Encapsulation, and to test the comunicaton between the program and the files.
+In the next step the program will be made more abstract. Interfaces and different classes will implemented.
 
 The hotel room management consoled based application is for my education purposes.
 I use a big number of csv files in order to manage the information of the different tasks required form the program.
