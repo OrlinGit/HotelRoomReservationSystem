@@ -12,19 +12,19 @@ public class RoomManagement {
 
 	public void availableRooms() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-																  "SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Rooms.csv"));
+																  "HotelRegistrationSystem\\abstract_branch\\" +
+																  "HotelRoomReservationSystem\\src\\ServiceFiles\\Rooms.csv"));
 		String line = reader.readLine();
 		while (line != null) {
 			String[] room = line.split(",");
 			if (room[12].equals("Available")) {
 				System.out.println(line);
 			}
-			//ArrayList<String> roomInfo = new ArrayList<>(Arrays.asList());
 			line = reader.readLine();
 		}
 	}
 
-	public void bookRoom(int userID) throws IOException {
+	public void bookRoom(String userID) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		BufferedReader reader = new BufferedReader(new FileReader("F:\\Coding\\Sirma Academy\\GitDocs\\" +
 																  "SirmaOOP\\HotelRoomReservationSystem\\src\\" +
@@ -49,7 +49,7 @@ public class RoomManagement {
 		System.out.println("Your room is booked. The price for your stay is " + priceForStay);
 	}
 
-	private double reservation(String roomID, LocalDate arrival, LocalDate departure, int userID) throws IOException {
+	private double reservation(String roomID, LocalDate arrival, LocalDate departure, String userID) throws IOException {
 		double priceForStay = -1.0;
 		int stay = departure.getDayOfYear() - arrival.getDayOfYear();
 		double roomPrice = getRoomPrice(roomID);
@@ -110,7 +110,7 @@ public class RoomManagement {
 		return pricePerNight;
 	}
 
-	protected int addToReservations(int userID, String roomID, LocalDate arrival, LocalDate departure) throws IOException {
+	protected int addToReservations(String userID, String roomID, LocalDate arrival, LocalDate departure) throws IOException {
 		int reservationID = reservationsCount();
 		BufferedWriter writer = new BufferedWriter(new FileWriter("F:\\Coding\\Sirma Academy\\GitDocs\\" +
 		"SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Reservations.csv", true));
@@ -122,7 +122,7 @@ public class RoomManagement {
 		return reservationID;
 	}
 
-	protected void addToHistory(int reservationID, int userID, String roomID, LocalDate arrival, LocalDate departure) throws IOException {
+	protected void addToHistory(int reservationID, String userID, String roomID, LocalDate arrival, LocalDate departure) throws IOException {
 		int historyID = historyCount();
 		BufferedWriter writer = new BufferedWriter(new FileWriter("F:\\Coding\\Sirma Academy\\GitDocs\\" +
 																  "SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\History.csv", true));

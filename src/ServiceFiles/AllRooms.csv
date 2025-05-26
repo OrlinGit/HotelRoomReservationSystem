@@ -1,30 +1,30 @@
-Room Id,Floor,Room number,Room type,Max. Guests,Beds,Amenity 1,Amenity 2,Amenity 3,Menu,Price[Euro],Cancellation Fee[Euro],Status
-001,1,101,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10,Available
-002,1,102,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10,Available
-003,1,103,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10,Available
-004,1,104,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10,Available
-005,1,105,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10,Available
-006,1,106,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10,Available
-007,2,201,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10,Available
-008,2,202,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10,Available
-009,2,203,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10,Available
-010,2,204,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10,Available
-011,2,205,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10,Available
-012,2,206,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10,Available
-013,3,301,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10,Available
-014,3,302,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10,Available
-015,3,303,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10,Available
-016,3,304,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10,Available
-017,3,305,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15,Available
-018,3,306,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15,Available
-019,4,401,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10,Available
-020,4,402,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10,Available
-021,4,402,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15,Available
-022,4,404,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15,Available
-023,4,405,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15,Available
-024,4,406,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15,Available
-025,5,501,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20,Available
-026,5,502,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20,Available
-027,6,601,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20,Available
-028,6,602,Honeymoon suite,2,1 king bed,free parking,SPA bath,dining room,Newly weds menu,300,30,Available
-029,7,Diplomat,Presidential apartment,2,1 king bed,free parking,SPA bath,dining room,Business menu,300,30,Available
+Room Id,Floor,Room number,Room type,Max. Guests,Beds,Amenity 1,Amenity 2,Amenity 3,Menu,Price[Euro],Cancellation Fee[Euro]
+001,1,101,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10
+002,1,102,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10
+003,1,103,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10
+004,1,104,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10
+005,1,105,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10
+006,1,106,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10
+007,2,201,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10
+008,2,202,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10
+009,2,203,Single,1,1 single bed,no parking,,,BeadAndBreakfast,100,10
+010,2,204,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10
+011,2,205,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10
+012,2,206,Single Deluxe,2,1 double bed,no parking,,,BeadAndBreakfast,140,10
+013,3,301,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10
+014,3,302,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10
+015,3,303,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10
+016,3,304,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10
+017,3,305,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
+018,3,306,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180
+019,4,401,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120
+020,4,402,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10
+021,4,402,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
+022,4,404,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
+023,4,405,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
+024,4,406,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
+025,5,501,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20
+026,5,502,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20
+027,6,601,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20
+028,6,602,Honeymoon suite,2,1 king bed,free parking,SPA bath,dining room,Newly weds menu,300,30
+029,7,Diplomat,Presidential apartment,2,1 king bed,free parking,SPA bath,dining room,Business menu,300,30
