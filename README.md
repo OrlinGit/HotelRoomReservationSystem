@@ -1,7 +1,7 @@
 **#HotelRoomReservationSystem**
-This repo is created to upload all small projects I have created in the OOP course.
-The code was written using only the principals of Encapsulation, and to test the comunicaton between the program and the files.
-In the next step the program will be made more abstract. Interfaces and different classes will implemented.
+I am trying to make this brach more abstract and implement Interfaces and Abstract classes.
+As I needed to change the whole architecture and implementation of the code, so I decided to change the whole code.
+It will be also used to train a little bit my git knowledge. 
 
 The hotel room management consoled based application is for my education purposes.
 I use a big number of csv files in order to manage the information of the different tasks required form the program.
