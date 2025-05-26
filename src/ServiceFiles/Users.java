@@ -19,14 +19,10 @@ public class Users {
 	 */
 	private int id;
 
-	private int usersCount() throws IOException {
-		int count = (int) Files.lines(Paths.get("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-				"SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Users.csv")).count();
-		return count;
-	}
+
 
 	protected boolean newUser(String userName, String password) throws IOException {
-		int usersCount = usersCount();
+		int usersCount = 10;
 		this.userName = userName;
 		this.password = password;
 		this.id = usersCount;
@@ -41,27 +37,7 @@ public class Users {
 		}
 	}
 
-	protected boolean isValidUser(String username, String password) throws FileNotFoundException {
-		BufferedReader reader = new BufferedReader(new FileReader("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-				"SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Users.csv"));
-		try {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] user = line.split(",");
-				String name = user[1];
-				String pass = user[2];
-				if (name.equals(username) && pass.equals(password)) {
-					return true;
-				}
-				line = reader.readLine();
-			}
 
-		} catch (IOException e) {
-			System.out.println("File is empty!");
-		}
-
-		return false;
-	}
 
 	protected int getId(String username, String password) throws FileNotFoundException {
 		int userId = -1;
