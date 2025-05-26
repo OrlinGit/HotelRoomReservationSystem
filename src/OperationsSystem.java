@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ManagementSystem {
+public class OperationsSystem {
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("""
@@ -68,8 +68,8 @@ public class ManagementSystem {
 			registration = sc.nextLine().toLowerCase();
 		}
 
-		int userID = user.registeredUser(registration);
-		if(userID != -1){
+		String userID = user.registeredUser(registration);
+		if(!userID.equals(null)){
 			RoomManagement roomBooking = new RoomManagement();
 			roomBooking.bookRoom(userID);
 		}
