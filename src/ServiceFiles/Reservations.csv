@@ -1,1 +1,1 @@
-ReservationID,UserID,RoomID,startDate,endDate
+ReservationID,UserID,RoomNumber,startDate,endDated
