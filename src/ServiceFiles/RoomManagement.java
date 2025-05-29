@@ -15,40 +15,43 @@ public class RoomManagement implements Room{
 		Room.availableRooms();
 	}
 
+	public void allRooms() throws IOException {
+		Room.allRooms();
+	}
+
 	public void bookRoom(String userID) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		BufferedReader reader = new BufferedReader(new FileReader("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-																  "SirmaOOP\\HotelRoomReservationSystem\\src\\" +
-																  "ServiceFiles\\AvailableRooms.csv"));
-		String line = reader.readLine();
 		System.out.println("Choose from available rooms:");
-		while (line != null) {
-			String[] room = line.split(",");
-			System.out.println("RoomID: " + room[0] + ", room type: " + room[3] + ", room price: " + room[10]);
-			line = reader.readLine();
-		}
-
-		System.out.println("Enter room ID: ");
-		String roomID = sc.nextLine();
+		Room.availableRooms();
+		System.out.println("Enter room number: ");
+		String roomNumber = sc.nextLine();
 		System.out.println("Enter arrival date in format yyyy-mm-dd: ");
 		String arrivalDateString = sc.nextLine();
 		System.out.println("Enter departure date in format yyyy-mm-dd: ");
 		String departureDateString = sc.nextLine();
 		LocalDate arrivalDate = LocalDate.parse(arrivalDateString);
 		LocalDate departureDate = LocalDate.parse(departureDateString);
-		double priceForStay = reservation(roomID, arrivalDate, departureDate, userID);
+		double priceForStay = reservation(roomNumber, arrivalDate, departureDate, userID);
 		System.out.println("Your room is booked. The price for your stay is " + priceForStay);
 	}
 
-	private double reservation(String roomID, LocalDate arrival, LocalDate departure, String userID) throws IOException {
+	private double reservation(String roomNumber, LocalDate arrival, LocalDate departure, String userID) throws IOException {
 		double priceForStay = -1.0;
 		int stay = departure.getDayOfYear() - arrival.getDayOfYear();
-		double roomPrice = Room.getRoomPrice(roomID);
-		String reservationID = Room.addToReservations(userID, roomID,arrival, departure);
-		boolean isRoomReserved = Room.reserveRoom(roomID);
-		Room.addToHistory(reservationID, userID, roomID, arrival, departure);
+		double roomPrice = Room.getRoomPrice(roomNumber);
+		String reservationID = Room.addToReservations(userID, roomNumber,arrival, departure);
+		boolean isRoomReserved = Room.reserveRoom(roomNumber);
+		Room.addToHistory(reservationID, userID, roomNumber, arrival, departure);
 		priceForStay = roomPrice * stay;
 		return priceForStay;
+	}
+
+	public double cancelReservation(String roomNumber) throws IOException {
+		double cancelationFee = -1.0;
+		Room.makeAvailable(roomNumber);
+		Room.deleteReservedRoom(roomNumber);
+		cancelationFee = Room.cancellationFee(roomNumber);
+		return cancelationFee;
 	}
 
 }

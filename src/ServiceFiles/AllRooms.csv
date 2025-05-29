@@ -19,7 +19,7 @@ Room Id,Floor,Room number,Room type,Max. Guests,Beds,Amenity 1,Amenity 2,Amenity
 018,3,306,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180
 019,4,401,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120
 020,4,402,Twin,2,2 single beds,no parking,,,BeadAndBreakfast,120,10
-021,4,402,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
+021,4,403,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
 022,4,404,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
 023,4,405,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
 024,4,406,Double,2,1 double bed,free parking,,,BeadAndBreakfast,180,15
@@ -27,4 +27,4 @@ Room Id,Floor,Room number,Room type,Max. Guests,Beds,Amenity 1,Amenity 2,Amenity
 026,5,502,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20
 027,6,601,Apartment,4,2 double beds,free parking,kitchen,,All inclusive,220,20
 028,6,602,Honeymoon suite,2,1 king bed,free parking,SPA bath,dining room,Newly weds menu,300,30
-029,7,Diplomat,Presidential apartment,2,1 king bed,free parking,SPA bath,dining room,Business menu,300,30
+029,7,701,Presidential apartment,2,1 king bed,free parking,SPA bath,dining room,Business menu,300,30

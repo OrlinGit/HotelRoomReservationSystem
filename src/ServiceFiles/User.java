@@ -75,10 +75,7 @@ public abstract class User {
 	read the different files.
 	 */
 	private int usersCount() throws IOException {
-		int count = (int) Files.lines(Paths.get("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-												"HotelRegistrationSystem\\abstract_branch\\" +
-												"HotelRoomReservationSystem\\src\\" +
-												"ServiceFiles\\Users.csv")).count();
+		int count = (int) Files.lines(Paths.get(pathUsersFile)).count();
 		return count;
 	}
 

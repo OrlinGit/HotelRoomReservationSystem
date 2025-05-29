@@ -15,7 +15,7 @@ public class OperationsSystem {
 				
 				Write the number of your desired option:\
 				
-				1.View available rooms\
+				1.View all rooms\
 				
 				2.Book a room\
 				
@@ -37,15 +37,16 @@ public class OperationsSystem {
 		}
 		switch (initialNavigation) {
 			case "1":
-				rooms.availableRooms();
+				rooms.allRooms();
 				break;
 			case "2":
 				roomBooking();
 				break;
 			case "3":
+				cancelReservation();
 				break;
 			case "4":
-				System.out.println("Good bay!");
+				System.out.println("Good day!");
 				System.exit(0);
 		}
 
@@ -76,5 +77,20 @@ public class OperationsSystem {
 		}
 
 	}
+
+	private static void allRooms() throws IOException {
+		RoomManagement roomBooking = new RoomManagement();
+		roomBooking.allRooms();
+	}
+
+	private static void cancelReservation() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter room number to cancel reservation:");
+		String roomNumber = sc.nextLine();
+		RoomManagement room = new RoomManagement();
+		double cancellationFee = room.cancelReservation(roomNumber);
+		System.out.println("You cancellation fee is: " + cancellationFee);
+	}
+
 
 }
