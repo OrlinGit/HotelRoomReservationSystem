@@ -1,8 +1,7 @@
-package ServiceFiles;
+package services;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 /*
 I use this class separate from the management class to use only to
 use as communication between my program and the files.
@@ -19,7 +18,8 @@ public class Users {
 	 */
 	private int id;
 
-
+	String pathToUsers = "F:\\Coding\\Sirma Academy\\GitDocs\\" +
+						 "SirmaOOP\\HotelRoomReservationSystem\\src\\storage\\Users.csv";
 
 	protected boolean newUser(String userName, String password) throws IOException {
 		int usersCount = 10;
@@ -27,8 +27,7 @@ public class Users {
 		this.password = password;
 		this.id = usersCount;
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-					"SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Users.csv", true));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(pathToUsers, true));
 			writer.write("\n" + this.id + "," + this.userName + "," + this.password);
 			writer.close();
 			return true;
@@ -41,8 +40,7 @@ public class Users {
 
 	protected int getId(String username, String password) throws FileNotFoundException {
 		int userId = -1;
-		BufferedReader reader = new BufferedReader(new FileReader("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-				"SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Users.csv"));
+		BufferedReader reader = new BufferedReader(new FileReader(pathToUsers));
 		try {
 			String line = reader.readLine();
 			while (line != null) {

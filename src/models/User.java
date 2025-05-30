@@ -1,4 +1,4 @@
-package ServiceFiles;
+package models;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -33,8 +33,8 @@ public abstract class User {
 	String pathUsersFile = "F:\\Coding\\Sirma Academy\\GitDocs\\" +
 						   "HotelRegistrationSystem\\abstract_branch\\" +
 						   "HotelRoomReservationSystem\\src\\" +
-						   "ServiceFiles\\Users.csv";
-	protected boolean setNewUser() {
+						   "storage\\Users.csv";
+	public boolean setNewUser() {
 		User newUser = this;
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(pathUsersFile, true));
@@ -46,7 +46,7 @@ public abstract class User {
 		}
 	}
 
-	protected String getUserID(String username, String password) throws FileNotFoundException {
+	public String getUserID(String username, String password) throws FileNotFoundException {
 		String userId = null;
 		BufferedReader reader = new BufferedReader(new FileReader(pathUsersFile));
 		try {
@@ -74,7 +74,7 @@ public abstract class User {
 	it will be the same count. If we would like to have them separate we need to create two file and make the program to
 	read the different files.
 	 */
-	private int usersCount() throws IOException {
+	public int usersCount() throws IOException {
 		int count = (int) Files.lines(Paths.get(pathUsersFile)).count();
 		return count;
 	}
