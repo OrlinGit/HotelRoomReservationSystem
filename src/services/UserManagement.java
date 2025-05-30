@@ -1,4 +1,7 @@
-package ServiceFiles;
+package services;
+
+import models.Employee;
+import models.Guest;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -76,7 +79,7 @@ public class UserManagement {
 
 	protected boolean isValidUser(String username, String password) throws FileNotFoundException {
 		BufferedReader reader = new BufferedReader(new FileReader("F:\\Coding\\Sirma Academy\\GitDocs\\" +
-																  "SirmaOOP\\HotelRoomReservationSystem\\src\\ServiceFiles\\Users.csv"));
+																  "SirmaOOP\\HotelRoomReservationSystem\\src\\storage\\Users.csv"));
 		try {
 			String line = reader.readLine();
 			while (line != null) {

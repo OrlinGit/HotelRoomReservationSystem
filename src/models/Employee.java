@@ -1,8 +1,8 @@
-package ServiceFiles;
+package models;
 
 import java.io.FileNotFoundException;
 
-public class Employee extends User{
+public class Employee extends User {
 	public Employee() {
 	}
 
@@ -11,32 +11,32 @@ public class Employee extends User{
 	}
 
 	@Override
-	protected boolean setNewUser() {
+	public boolean setNewUser() {
 		return super.setNewUser();
 	}
 
 	@Override
-	protected String getUserID(String username, String password) throws FileNotFoundException {
+	public String getUserID(String username, String password) throws FileNotFoundException {
 		return super.getUserID(username, password);
 	}
 
-	protected boolean createNewRoom(){
+	public boolean createNewRoom(){
 
 		return false;
 	}
 
-	protected boolean deleteRoom(String UUID){
+	public boolean deleteRoom(String UUID){
 		return false;
 	}
 
 	/*
 	Here the employee will be able to create reservation and manipulate the files by directly manipulating the files.
 	 */
-	protected boolean makeReservation(){
+	public boolean makeReservation(){
 		return false;
 	}
 
-	protected boolean deleteReservation(){
+	public boolean deleteReservation(){
 		return false;
 	}
 }

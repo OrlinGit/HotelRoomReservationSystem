@@ -1,15 +1,14 @@
-package ServiceFiles;
+package services;
+
+import models.Room;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.UUID;
 
 
-public class RoomManagement implements Room{
+
+public class RoomManagement implements Room {
 
 	public void availableRooms() throws IOException {
 		Room.availableRooms();

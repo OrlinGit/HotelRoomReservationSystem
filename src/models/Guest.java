@@ -1,4 +1,4 @@
-package ServiceFiles;
+package models;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,15 +14,15 @@ public class Guest extends User {
 		super(username, password);
 	}
 
-	protected boolean setNewUser() {
+	public boolean setNewUser() {
 		return super.setNewUser();
 	}
 
-	protected String getUserID(String username, String password) throws FileNotFoundException {
+	public String getUserID(String username, String password) throws FileNotFoundException {
 		return super.getUserID(username, password);
 	}
 
-	protected void addToHistory(String userID, String reservationID) {
+	public void addToHistory(String userID, String reservationID) {
 		ArrayList<String> listOfReservations = new ArrayList();
 		listOfReservations = this.userHistory.get(userID);
 		listOfReservations.add(reservationID);

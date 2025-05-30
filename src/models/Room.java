@@ -1,4 +1,4 @@
-package ServiceFiles;
+package models;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -17,17 +17,18 @@ Afterwords it can be extended to manipulate the information as new needs occur.
 public interface Room {
 
 	String pathToAllRooms = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
-							"HotelRoomReservationSystem\\src\\ServiceFiles\\AllRooms.csv";
+							"HotelRoomReservationSystem\\src\\storage\\AllRooms.csv";
 	String pathToAvailableRooms = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
-								  "HotelRoomReservationSystem\\src\\ServiceFiles\\AvailableRooms.csv";
+								  "HotelRoomReservationSystem\\src\\storage\\AvailableRooms.csv";
 	String pathToHistory = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
-						   "HotelRoomReservationSystem\\src\\ServiceFiles\\History.csv";
+						   "HotelRoomReservationSystem\\src\\storage\\History.csv";
 	String pathToReservations = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
-								"HotelRoomReservationSystem\\src\\ServiceFiles\\Reservations.csv";
+								"HotelRoomReservationSystem\\src\\storage\\Reservations.csv";
 	String pathToReservedRooms = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
-								 "HotelRoomReservationSystem\\src\\ServiceFiles\\ReservedRooms.csv";
+								 "HotelRoomReservationSystem\\src\\storage\\ReservedRooms.csv";
 
 	static void createRoom() {
+
 
 	}
 
@@ -131,6 +132,11 @@ public interface Room {
 
 	static int historyCount() throws IOException {
 		int count = (int) Files.lines(Paths.get(pathToHistory)).count();
+		return count;
+	}
+
+	static int roomCount() throws IOException {
+		int count = (int) Files.lines(Paths.get(pathToAllRooms)).count();
 		return count;
 	}
 
