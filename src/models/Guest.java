@@ -6,20 +6,25 @@ import java.util.HashMap;
 
 public class Guest extends User {
 	HashMap<String, ArrayList<String>> userHistory = new HashMap();
-
+	/*
+	In the super class User there is a variable role to define a user.
+	For all users the role is pre-defined as "user". This is why it is hard coded.
+	 */
+	static String role = "user";
 	public Guest() {
 	}
 
 	public Guest(String username, String password) {
-		super(username, password);
+		super(username, password, role);
 	}
 
-	public boolean setNewUser() {
+	public String setNewUser() {
 		return super.setNewUser();
 	}
 
 	public String getUserID(String username, String password) throws FileNotFoundException {
-		return super.getUserID(username, password);
+		String role = "user";
+		return super.getUserID(username, password, role);
 	}
 
 	public void addToHistory(String userID, String reservationID) {

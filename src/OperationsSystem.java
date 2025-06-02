@@ -1,88 +1,132 @@
 import services.RoomManagement;
 import services.UserManagement;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class OperationsSystem {
 	public static void main(String[] args) throws IOException {
+		inputDialog();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("""
-				Welcome to our Hotel management system!\
-				
-				Write the number of your desired option:\
-				
-				1.View all rooms\
-				
-				2.Book a room\
-				
-				3.Cancel reservation\
-				
-				4. Exit program
-				""");
-
-		String initialNavigation = sc.nextLine();
-		RoomManagement rooms = new RoomManagement();
-		ArrayList<String> validChoices = new ArrayList<>(Arrays.asList("1", "2", "3", "4"));
-		while (!validChoices.contains(initialNavigation)) {
-			System.out.println("""
-					Invalid choice\
-					
-					Please choose again!
-					""");
-			initialNavigation = sc.nextLine();
-		}
-		switch (initialNavigation) {
+		System.out.print("Your choice: ");
+		String userChoice = sc.nextLine();
+		String validInput = validInput(userChoice);
+		String userID = null;
+		String employeeID = null;
+		switch (validInput) {
 			case "1":
-				rooms.allRooms();
+				userID = logAsUser();
 				break;
 			case "2":
-				roomBooking();
-				break;
+				visitor();
 			case "3":
-				cancelReservation();
+				userID = registerUser();
 				break;
 			case "4":
-				System.out.println("Good day!");
+				employeeID = logAsEmployee();
+				break;
+			case "5":
+				employeeID = registerEmployee();
+				break;
+			case "6":
+				System.out.println("Have a good day!");
 				System.exit(0);
+				break;
 		}
 
+		System.out.println(employeeID);
 	}
-
-	private static void roomBooking() throws IOException {
-		/*
-		This needs to be optimized. Registration and user validation should be separate from the booking
-		functionality.
-		 */
-		Scanner sc = new Scanner(System.in);
-		UserManagement user = new UserManagement();
+	/*
+	This is just an initial dialog.
+	 */
+	public static void inputDialog() {
 		System.out.println("""
-				In order to book a room you need to be a registered user.\
+				Hello to our Hotel management system!\
 				
-				"Are you a registered user? Y/N""");
-		String registration = sc.nextLine().toLowerCase();
-		// I use while statement to be sure that I will take from the user only Y or N answer.
-		while (!registration.equals("y") && !registration.equals("n")) {
-			System.out.println("Invalid input.\nAre you a registered user? Y/N");
-			registration = sc.nextLine().toLowerCase();
-		}
+				If you are registered guest of our hotel enter 1.\
+				
+				If you are just visiting our site, enter 2.\
+				
+				If you would like to register as guest enter 3.\
+				
+				In case you are our employee login into the system enter 4.\
+				
+				For new employee registration enter 5.\
+				
+				Would you like ot exit the program, enter 6.\
+				""");
 
-		String userID = user.registeredUser(registration);
-		if(!userID.equals(null)){
-			RoomManagement roomBooking = new RoomManagement();
-			roomBooking.bookRoom(userID);
-		}
 
 	}
 
-	private static void allRooms() throws IOException {
-		RoomManagement roomBooking = new RoomManagement();
-		roomBooking.allRooms();
+	/*
+	This method checks if the input from the console is valid.
+	 */
+	public static String validInput(String input) {
+		Scanner sc = new Scanner(System.in);
+		List<String> validChoices = List.of("1", "2", "3", "4", "5", "6");
+		while (!validChoices.contains(input)) {
+			System.out.println("Your choice is not valid! Please choose again!");
+			System.out.print("Your choice: ");
+			input = sc.nextLine();
+		}
+		return input;
 	}
 
-	private static void cancelReservation() throws IOException {
+	/*
+	This method just prints all rooms in the hotel with their specifics.
+	The only function available for non-registered users.
+	 */
+	public static void visitor() throws IOException {
+		System.out.println("""
+				As a non registered visitor you will see a full list of all our rooms.\
+				""");
+		RoomManagement rm = new RoomManagement();
+		rm.allRooms();
+	}
+
+	/*
+	This method registers new user. Returns String with the userID.
+	 */
+	public static String registerUser() throws FileNotFoundException {
+		UserManagement user = new UserManagement();
+		return user.registerUser();
+	}
+
+	/*
+	This method checks if the user is already registered by checking if username and password exist and match with the
+	database in Users.csv
+	Return string with the userID.
+	 */
+	public static String logAsUser() throws IOException {
+		UserManagement user = new UserManagement();
+		return user.userLogIn();
+	}
+
+	/*
+	This method checks if the user is already registered by checking if username and password exist and match with the
+	database in Users.csv
+	Return string with the userID.
+	 */
+	public static String logAsEmployee() throws FileNotFoundException {
+		UserManagement user = new UserManagement();
+		return user.employeeLogIn();
+	}
+
+	/*
+	This functionality was build without safety measures. For now, it wis OK as I need just the functionality.
+	All checks and validations will be added later.
+	 */
+	public static String registerEmployee() throws FileNotFoundException {
+		UserManagement user = new UserManagement();
+		return user.registerEmployee();
+	}
+
+	public void availableRooms(){}
+
+	public void cancelReservation() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter room number to cancel reservation:");
 		String roomNumber = sc.nextLine();
@@ -91,5 +135,6 @@ public class OperationsSystem {
 		System.out.println("You cancellation fee is: " + cancellationFee);
 	}
 
+	public void bookRoom(){}
 
 }

@@ -35,22 +35,18 @@ public class RoomManagement implements Room {
 	}
 
 	private double reservation(String roomNumber, LocalDate arrival, LocalDate departure, String userID) throws IOException {
-		double priceForStay = -1.0;
 		int stay = departure.getDayOfYear() - arrival.getDayOfYear();
 		double roomPrice = Room.getRoomPrice(roomNumber);
 		String reservationID = Room.addToReservations(userID, roomNumber,arrival, departure);
 		boolean isRoomReserved = Room.reserveRoom(roomNumber);
 		Room.addToHistory(reservationID, userID, roomNumber, arrival, departure);
-		priceForStay = roomPrice * stay;
-		return priceForStay;
+		return (roomPrice * stay);
 	}
 
 	public double cancelReservation(String roomNumber) throws IOException {
-		double cancelationFee = -1.0;
 		Room.makeAvailable(roomNumber);
 		Room.deleteReservedRoom(roomNumber);
-		cancelationFee = Room.cancellationFee(roomNumber);
-		return cancelationFee;
+		return Room.cancellationFee(roomNumber);
 	}
 
 }

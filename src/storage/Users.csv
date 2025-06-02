@@ -1,7 +1,12 @@
-User ID,username,password
-1,admin,admin
-a1befd90-ff0c-491d-be47-fdda7d8d9d87,orlin,orlin
-d33fb597-9ec7-4342-8543-3ce6f5f769f0,youAgain,getBetterPassword
+User ID,username,password,role
+1,admin,admin,employee
+a1befd90-ff0c-491d-be47-fdda7d8d9d87,orlin,orlin,user
+d33fb597-9ec7-4342-8543-3ce6f5f769f0,youAgain,getBetterPassword,user
 This is test with hard coding
 This is test with a variable
-fc989503-ea85-471c-b3d2-96ee7aba8096,someguy,workingpassword
+fc989503-ea85-471c-b3d2-96ee7aba8096,someguy,workingpassword,user
+e333180a-dc3c-4fa1-b7af-8e9a1aa3062c,test2,test2,user
+3920680f-fc4a-415b-93c4-6c42c0dc9011,test3,test3,user
+408a84c5-32d7-4a6c-800d-7ea5827b06c8,test4,test4,user
+d783a2bc-f274-4621-ad9d-ce514f225689,test5,test5,user
+9d5c6893-add7-4257-8097-6db5fbc5b10f,manager,manager,employee

@@ -16,14 +16,16 @@ public abstract class User {
 	private UUID USERID;
 	private String username;
 	private String password;
+	private String role;
 
 	public User (){
 	}
 
-	public User(String username, String password) {
+	public User(String username, String password, String role) {
 		this.USERID = UUID.randomUUID();
 		this.username = username;
 		this.password = password;
+		this.role = role;
 	}
 
 	/*
@@ -34,30 +36,35 @@ public abstract class User {
 						   "HotelRegistrationSystem\\abstract_branch\\" +
 						   "HotelRoomReservationSystem\\src\\" +
 						   "storage\\Users.csv";
-	public boolean setNewUser() {
+	public String setNewUser() {
 		User newUser = this;
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(pathUsersFile, true));
-			writer.write("\n" + newUser.USERID + "," + newUser.username + "," + newUser.password);
+			writer.write( newUser.USERID + "," + newUser.username + "," + newUser.password + "," + newUser.role);
+			writer.newLine();
 			writer.close();
-			return true;
+			return String.valueOf(this.USERID);
 		} catch (IOException String) {
 			throw new RuntimeException("File not accessible!");
 		}
+
 	}
 
-	public String getUserID(String username, String password) throws FileNotFoundException {
+	public String getUserID(String username, String password, String inputRole) throws FileNotFoundException {
 		String userId = null;
 		BufferedReader reader = new BufferedReader(new FileReader(pathUsersFile));
 		try {
 			String line = reader.readLine();
 			while (line != null) {
-				String[] user = line.split(",");
-				String name = user[1];
-				String pass = user[2];
-				if (name.equals(username) && pass.equals(password)) {
-					userId = user[0];
-					return userId;
+				if(line.contains(username)) {
+					String[] user = line.split(",");
+					String name = user[1];
+					String pass = user[2];
+					String role = user[3];
+					if (name.equals(username) && pass.equals(password) && role.equals(inputRole)) {
+						userId = user[0];
+						return userId;
+					}
 				}
 				line = reader.readLine();
 			}

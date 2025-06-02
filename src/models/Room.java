@@ -26,14 +26,8 @@ public interface Room {
 								"HotelRoomReservationSystem\\src\\storage\\Reservations.csv";
 	String pathToReservedRooms = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
 								 "HotelRoomReservationSystem\\src\\storage\\ReservedRooms.csv";
-
-	static void createRoom() {
-
-
-	}
-
-	static void deleteRoom() {
-	}
+	String pathToTemp = "F:\\Coding\\Sirma Academy\\GitDocs\\HotelRegistrationSystem\\abstract_branch\\" +
+						"HotelRoomReservationSystem\\src\\storage\\temp.csv";
 
 	static double getRoomPrice(String roomNumber) throws IOException {
 		double pricePerNight = -1.0;
